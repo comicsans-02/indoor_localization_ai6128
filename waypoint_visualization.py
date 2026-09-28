@@ -16,18 +16,18 @@ for image_path in data_dir.glob("site*/**/*.png"):
         floor_width = map_info["width"]
 
     sensor_info_path = image_path.parent / "path_data_files"
-    path_points = []
+    draw = ImageDraw.Draw(img)
     for sensor_path in sensor_info_path.glob("*.txt"):
         sensor_data = read_data_file(sensor_path)
+        path_points = []
         for timestamp, x, y in sensor_data.waypoint:
             x_px = round(x / floor_width * img_width_in_px)
             y_px = round(img_height_in_px - (y / floor_height * img_height_in_px))
             path_points.append((x_px, y_px))
 
-    draw = ImageDraw.Draw(img)
-    draw.line(path_points, fill=(255, 0, 0), width=2)
-    for x, y in path_points:
-        draw.ellipse((x - 2, y - 2, x + 2, y + 2), fill=(0, 100, 255), outline =(255, 255, 255), width=1)
+        draw.line(path_points, fill=(255, 0, 0), width=2)
+        for x, y in path_points:
+            draw.ellipse((x - 2, y - 2, x + 2, y + 2), fill=(0, 100, 255), outline =(255, 255, 255), width=1)
 
     save_path = Path("waypoint_viz") / site / f"{image_path.parent.name}.png"
     save_path.parent.mkdir(parents=True, exist_ok=True)
