@@ -8,9 +8,9 @@ from matplotlib.image import imread
 import json
 import sys
 
-filedir = 'indoor-location-competition-20/data'
-siteno = '1'
-floornos = ['B1','F2','F4']
+filedir = '../indoor-location-competition-20/data'
+siteno = '2'
+floornos = ['F1']
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__)) + '/output'
 
@@ -21,6 +21,7 @@ def get_output_image_path(siteno, floorno, bssid):
 def extract_wifi_data(filedir, siteno, floorno):
     mwi_datas = {}
     path = filedir+'/site'+siteno+'/'+floorno+'/'+'path_data_files'+'/'
+    print(f"Reading trace files from {path}")
     path_filenames = list(Path(path).resolve().glob("*.txt"))
     
     for path_filename in path_filenames:
