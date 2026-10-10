@@ -41,7 +41,7 @@ for image_path in data_dir.glob("site*/**/*.png"):
     plt.gca().xaxis.set_major_locator(MultipleLocator(20))
     plt.gca().yaxis.set_major_locator(MultipleLocator(20))
     plt.grid(True, linestyle='--', linewidth=0.5)
-    save_path = Path("waypoint_viz") / site / f"{image_path.parent.name}.png"
+    save_path = Path("waypoint_viz_plt") / site / f"{image_path.parent.name}.png"
     save_path.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(
           save_path,

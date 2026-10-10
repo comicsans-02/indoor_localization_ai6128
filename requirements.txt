@@ -1,0 +1,11 @@
+ipykernel>=6.0
+jupyterlab>=4.0
+matplotlib>=3.11.2
+numpy>=2.5.3
+pandas>=2.0
+pillow>=12.3.0
+plotly>=7.0.0
+pykalman>=0.11.2
+scikit-learn>=1.5
+scipy>=1.18.1
+torch>=2.5

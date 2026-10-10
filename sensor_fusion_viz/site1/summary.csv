@@ -1,0 +1,4 @@
+site,floor,traces,predicted_waypoints,mean_error_m,median_error_m,rmse_m,plot
+site1,B1,160,874,8.656806499304501,6.507370046831051,10.90749024406393,C:\Users\LENOVO\Desktop\indoor_localization\sensor_fusion_viz\site1\B1.png
+site1,F2,123,926,10.305755493743648,8.524263842711417,13.618900086179329,C:\Users\LENOVO\Desktop\indoor_localization\sensor_fusion_viz\site1\F2.png
+site1,F4,122,920,9.859188460851867,7.887176991134355,12.89892314896396,C:\Users\LENOVO\Desktop\indoor_localization\sensor_fusion_viz\site1\F4.png
