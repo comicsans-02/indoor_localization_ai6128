@@ -1,6 +1,6 @@
 # Indoor Localisation
 
-This repository contains the code, notebooks, and generated results for the basic and advanced tasks.
+This repository contains the code, notebooks, and generated results for the basic tasks and the final advanced localisation solution.
 
 ## Setup
 
@@ -88,17 +88,7 @@ python wifi_viz/wifi_visualization.py
 
 The generated heatmaps are stored under `wifi_viz/output/`.
 
-## Advanced tasks
-
-### iBeacon-only and multimodal MLP
-
-Open `Advanced Task 1_MLP/MLP_iBeacon_vs_Multimodal.ipynb` and set:
-
-```python
-DATA_DIR = "./dataset"
-```
-
-Skip the package-installation cell and run the notebook in order. The result figures are stored in `Advanced Task 1_MLP/`.
+## Advanced task
 
 ### Magnetic and IMU Viterbi localisation
 
@@ -108,20 +98,8 @@ Open `Mag+IMU_viterbi_localization.ipynb` and set:
 floor_data_dir = "./dataset/data/site1/F1"
 ```
 
-Skip the installation and Google Drive cells, then run the remaining cells in order. The final cells print the mean and median positioning errors.
+Skip the installation and Google Drive cells, then run the remaining cells in order. The final cells print the mean and median positioning errors. This notebook contains the final selected approach for the advanced task.
 
-### Accelerometer-based Kalman filter
+---
 
-Run the default evaluation for `site1/B1`, `site1/F2`, and `site1/F4`:
-
-```bash
-python pykalman_waypoint_estimation.py
-```
-
-Different floors can be selected using command-line arguments:
-
-```bash
-python pykalman_waypoint_estimation.py --site site1 --floors B1 F1 F2
-```
-
-The plots and result summary are stored under `sensor_fusion_viz/`.
+*Experimental files:* `Advanced Task 1_MLP/MLP_iBeacon_vs_Multimodal.ipynb` compares an iBeacon-only MLP with an MLP using iBeacon, Wi-Fi, and geomagnetic features. `pykalman_waypoint_estimation.py` estimates movement from accelerometer and rotation-vector readings using a Kalman filter, with its results stored under `sensor_fusion_viz/`. These approaches were tested but were not selected as the final solution.
